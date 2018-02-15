@@ -13,8 +13,8 @@
 @total_price = 0
 
 # 1) Print a list of products:
-puts "Welcome to our Yoga-Store! These are our products:"
-@products.each {|item| puts "Name: #{item[:name]}\nPrice: #{item[:price]} \nref.num: #{item[:reference_number]} \n\n" }
+puts "\n**Welcome to our Yoga-Store! These are our products:**\n"
+@products.each {|item| puts "Name: #{item[:name]}\n--Price: #{item[:price]} € \n--Ref.num: #{item[:reference_number]} \n\n" }
 
 # 2) User buys...
 
@@ -29,7 +29,7 @@ def purchase_item
       @total_price += item[:price]
     end
   }
-  puts "You have added #{@shopping_cart} to your shopping cart. \nThe current ammount to pay is #{@total_price} €"
+  puts "\nYou have #{@shopping_cart} in your shopping cart. \nThe current ammount to pay is #{@total_price} €"
   checkout
 end
 
@@ -42,7 +42,7 @@ def checkout
   if user_choice.upcase == "Y"
     purchase_item
   else
-    puts "\nThank you for shopping. Please pay #{@total_price} €"
+    puts "\n***Thank you for shopping. Please pay #{@total_price} € ***\n"
   end
 end
 
